@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>xd</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Pomodoro</h1>
+    <p class="sub">Elija la sesión, configure los minutos y presione iniciar</p>
+
+    <div class="row" role="group" aria-label="Tipo de sesión">
+      <button type="button" class="tab" data-mode="work" aria-pressed="true">Trabajo</button>
+      <button type="button" class="tab" data-mode="short" aria-pressed="false">Descanso corto</button>
+      <button type="button" class="tab" data-mode="long" aria-pressed="false">Descanso largo</button>
+    </div>
+
+    <p class="mode" id="modeLabel">Trabajo</p>
+    <div class="time" id="time" role="timer" aria-label="Tiempo restante">25:00</div>
+
+    <div class="row">
+      <button type="button" id="toggle" class="primary" aria-label="Iniciar temporizador">Iniciar</button>
+      <button type="button" id="reset" aria-label="Reiniciar temporizador">Reiniciar</button>
+    </div>
+
+    <p class="count">Sesiones de trabajo completadas: <strong id="count">0</strong></p>
+    <p id="live" class="sr-only" aria-live="polite"></p>
+
+    <fieldset>
+      <legend>Configuración (minutos)</legend>
+      <div class="row">
+        <label>Trabajo <input type="number" id="cfg-work" min="1" max="120" value="25"></label>
+        <label>Corto <input type="number" id="cfg-short" min="1" max="60" value="5"></label>
+        <label>Largo <input type="number" id="cfg-long" min="1" max="60" value="15"></label>
+      </div>
+    </fieldset>
+  </main>
+  <script src="js/script.js"></script>
+</body>
+</html>
